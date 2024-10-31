@@ -1,0 +1,61 @@
+{
+    "transcription_text": "Do you believe that America needs back the Trump economy where every American had a real chance at the American dream with jobs and homes?",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 8.0,
+            "text": " Do you believe that America needs back the Trump economy where every American had a real",
+            "tokens": [
+                50364,
+                1144,
+                291,
+                1697,
+                300,
+                3374,
+                2203,
+                646,
+                264,
+                3899,
+                5010,
+                689,
+                633,
+                2665,
+                632,
+                257,
+                957,
+                50764
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.43101564049720764,
+            "compression_ratio": 1.289719581604004,
+            "no_speech_prob": 0.03219509497284889
+        },
+        {
+            "id": 1,
+            "seek": 0,
+            "start": 8.0,
+            "end": 13.5,
+            "text": " chance at the American dream with jobs and homes?",
+            "tokens": [
+                50764,
+                2931,
+                412,
+                264,
+                2665,
+                3055,
+                365,
+                4782,
+                293,
+                7388,
+                30,
+                51039
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.43101564049720764,
+            "compression_ratio": 1.289719581604004,
+            "no_speech_prob": 0.03219509497284889
+        }
+    ]
+}

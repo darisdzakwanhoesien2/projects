@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video, Transcript, and Graph Viewer</title>
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <h1>Video, Transcript, and Graph Viewer</h1>
+
+  <!-- Dropdown for selecting a package -->
+  <label for="packageSelect">Select Package:</label>
+  <select id="packageSelect">
+    <% packages.forEach(function(packageName) { %>
+      <option value="<%= packageName %>"><%= packageName %></option>
+    <% }) %>
+  </select>
+
+  <!-- Video display -->
+  <h2>Video</h2>
+  <video id="videoPlayer" width="600" controls>
+    <source id="videoSource" src="/packages/<%= packages[0] %>/downloaded_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- JSON transcript table -->
+  <h2>Transcript Segments</h2>
+  <table id="transcriptTable" border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be dynamically inserted here -->
+    </tbody>
+  </table>
+
+  <!-- Graph display -->
+  <h2>Graph</h2>
+  <img id="graphImage" src="/packages/<%= packages[0] %>/metrics_plot.png" alt="Graph Image" width="600">
+
+  <!-- Graph display -->
+  <h2>Correlation</h2>
+  <img id="graphMetricsImage" src="/packages/<%= packages[0] %>/correlation_matrix.png" alt="Graph Image" width="600">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const packageSelect = document.getElementById('packageSelect');
+      const videoPlayer = document.getElementById('videoPlayer');
+      const videoSource = document.getElementById('videoSource');
+      const transcriptTableBody = document.getElementById('transcriptTable').querySelector('tbody');
+      const graphImage = document.getElementById('graphImage');
+      const graphMetricsImage = document.getElementById('graphMetricsImage');
+
+      // Function to format time in minutes:seconds
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+      }
+
+      packageSelect.addEventListener('change', function() {
+        const selectedPackage = this.value;
+        videoSource.src = `/packages/${selectedPackage}/downloaded_video.mp4`;
+        videoPlayer.load();
+
+        // Fetch the corresponding transcript and populate the table
+        fetch(`/transcripts/${selectedPackage}`)
+          .then(response => response.json())
+          .then(data => {
+            transcriptTableBody.innerHTML = ''; // Clear existing rows
+
+            if (data.segments && data.segments.length > 0) {
+              data.segments.forEach(segment => {
+                const row = document.createElement('tr');
+
+                const idCell = document.createElement('td');
+                idCell.textContent = segment.id;
+                row.appendChild(idCell);
+
+                const startCell = document.createElement('td');
+                startCell.textContent = formatTime(segment.start); // Convert start time
+                row.appendChild(startCell);
+
+                const endCell = document.createElement('td');
+                endCell.textContent = formatTime(segment.end); // Convert end time
+                row.appendChild(endCell);
+
+                const textCell = document.createElement('td');
+                textCell.textContent = segment.text;
+                row.appendChild(textCell);
+
+                transcriptTableBody.appendChild(row);
+              });
+            } else {
+              const row = document.createElement('tr');
+              const noDataCell = document.createElement('td');
+              noDataCell.textContent = 'No transcript segments available';
+              noDataCell.colSpan = 4;
+              row.appendChild(noDataCell);
+              transcriptTableBody.appendChild(row);
+            }
+          })
+          .catch(err => {
+            transcriptTableBody.innerHTML = `
+              <tr>
+                <td colspan="4">Transcript not found.</td>
+              </tr>`;
+          });
+
+        // Update the graph image
+        graphImage.src = `/packages/${selectedPackage}/metrics_plot.png`;
+        graphMetricsImage.src = `/packages/${selectedPackage}/correlation_matrix.png`;
+      });
+
+      // Load the transcript of the first package by default
+      fetch(`/transcripts/${packageSelect.value}`)
+        .then(response => response.json())
+        .then(data => {
+          transcriptTableBody.innerHTML = ''; // Clear existing rows
+
+          if (data.segments && data.segments.length > 0) {
+            data.segments.forEach(segment => {
+              const row = document.createElement('tr');
+
+              const idCell = document.createElement('td');
+              idCell.textContent = segment.id;
+              row.appendChild(idCell);
+
+              const startCell = document.createElement('td');
+              startCell.textContent = formatTime(segment.start); // Convert start time
+              row.appendChild(startCell);
+
+              const endCell = document.createElement('td');
+              endCell.textContent = formatTime(segment.end); // Convert end time
+              row.appendChild(endCell);
+
+              const textCell = document.createElement('td');
+              textCell.textContent = segment.text;
+              row.appendChild(textCell);
+
+              transcriptTableBody.appendChild(row);
+            });
+          } else {
+            const row = document.createElement('tr');
+            const noDataCell = document.createElement('td');
+            noDataCell.textContent = 'No transcript segments available';
+            noDataCell.colSpan = 4;
+            row.appendChild(noDataCell);
+            transcriptTableBody.appendChild(row);
+          }
+        })
+        .catch(err => {
+          transcriptTableBody.innerHTML = `
+            <tr>
+              <td colspan="4">Transcript not found.</td>
+            </tr>`;
+        });
+    });
+
+  </script>
+</body>
+</html>

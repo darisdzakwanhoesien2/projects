@@ -1,0 +1,160 @@
+{
+    "overall_mean_sentiment": 0.7247222222222223,
+    "overall_standard_deviation": 0.06295947631142493,
+    "combined_standard_deviation": 0.1422982189839847,
+    "segments": [
+        {
+            "id": 0,
+            "nltk_opinion_lexicon_net": 0.11764705882352941,
+            "vader_neg": 0.0,
+            "vader_neu": 0.753,
+            "vader_pos": 0.247,
+            "vader_compound": 0.5574,
+            "openai_mean_sentiment": 0.8,
+            "std_sentiment": 0.0,
+            "tokens": [
+                8,
+                8,
+                8,
+                null,
+                8
+            ]
+        },
+        {
+            "id": 1,
+            "nltk_opinion_lexicon_net": 0.0,
+            "vader_neg": 0.0,
+            "vader_neu": 1.0,
+            "vader_pos": 0.0,
+            "vader_compound": 0.0,
+            "openai_mean_sentiment": 0.7,
+            "std_sentiment": 0.10954451150103321,
+            "tokens": [
+                7,
+                7,
+                8,
+                8,
+                5
+            ]
+        },
+        {
+            "id": 2,
+            "nltk_opinion_lexicon_net": 0.0,
+            "vader_neg": 0.0,
+            "vader_neu": 1.0,
+            "vader_pos": 0.0,
+            "vader_compound": 0.0,
+            "openai_mean_sentiment": 0.76,
+            "std_sentiment": 0.048989794855663564,
+            "tokens": [
+                8,
+                8,
+                8,
+                7,
+                7
+            ]
+        },
+        {
+            "id": 3,
+            "nltk_opinion_lexicon_net": 0.0,
+            "vader_neg": 0.0,
+            "vader_neu": 0.87,
+            "vader_pos": 0.13,
+            "vader_compound": 0.34,
+            "openai_mean_sentiment": 0.8099999999999999,
+            "std_sentiment": 0.019999999999999997,
+            "tokens": [
+                8.5,
+                8,
+                8,
+                8,
+                8
+            ]
+        },
+        {
+            "id": 4,
+            "nltk_opinion_lexicon_net": 0.11764705882352941,
+            "vader_neg": 0.256,
+            "vader_neu": 0.512,
+            "vader_pos": 0.232,
+            "vader_compound": -0.1531,
+            "openai_mean_sentiment": 0.8099999999999999,
+            "std_sentiment": 0.019999999999999997,
+            "tokens": [
+                8.5,
+                8,
+                8,
+                8,
+                8.0
+            ]
+        },
+        {
+            "id": 5,
+            "nltk_opinion_lexicon_net": -0.06666666666666667,
+            "vader_neg": 0.306,
+            "vader_neu": 0.55,
+            "vader_pos": 0.143,
+            "vader_compound": -0.453,
+            "openai_mean_sentiment": 0.8625,
+            "std_sentiment": 0.041457809879442496,
+            "tokens": [
+                null,
+                8.5,
+                9,
+                8,
+                9
+            ]
+        },
+        {
+            "id": 6,
+            "nltk_opinion_lexicon_net": 0.16666666666666666,
+            "vader_neg": 0.0,
+            "vader_neu": 0.649,
+            "vader_pos": 0.351,
+            "vader_compound": 0.4019,
+            "openai_mean_sentiment": 0.45999999999999996,
+            "std_sentiment": 0.1772004514666935,
+            "tokens": [
+                3,
+                7,
+                3.5,
+                6.5,
+                3
+            ]
+        },
+        {
+            "id": 7,
+            "nltk_opinion_lexicon_net": 0.0,
+            "vader_neg": 0.0,
+            "vader_neu": 1.0,
+            "vader_pos": 0.0,
+            "vader_compound": 0.0,
+            "openai_mean_sentiment": 0.67,
+            "std_sentiment": 0.06,
+            "tokens": [
+                7,
+                6,
+                6,
+                7.5,
+                7
+            ]
+        },
+        {
+            "id": 8,
+            "nltk_opinion_lexicon_net": 0.0,
+            "vader_neg": 0.0,
+            "vader_neu": 0.421,
+            "vader_pos": 0.579,
+            "vader_compound": 0.6705,
+            "openai_mean_sentiment": 0.65,
+            "std_sentiment": 0.08944271909999159,
+            "tokens": [
+                6,
+                5.5,
+                6,
+                7,
+                8
+            ]
+        }
+    ]
+}
