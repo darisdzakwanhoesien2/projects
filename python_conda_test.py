@@ -95,31 +95,7 @@ def process_video(url):
                 print("Download successful.")
         except Exception as e:
             print(f"Error downloading video: {e}")
-
-    #     # Retrieve the downloaded file name and extract audio
-    #     try:
-    #         downloaded_files = [f for f in os.listdir(folder_name) if f.endswith('.mp4')]
-    #         if downloaded_files:
-    #             downloaded_file = downloaded_files[0]
-    #             downloaded_file_path = os.path.join(folder_name, downloaded_file) # 
-    #             print(f"Downloaded file: {downloaded_file}")
-                
-    #             # Extract the audio and save it as an MP3 file
-    #             video = AudioSegment.from_file(downloaded_file_path, format="mp4")
-    #             audio_file_path = os.path.join(folder_name, 'final_audio.mp3')
-    #             video.export(audio_file_path, format="mp3")
-    #             print(f"Audio extracted: {audio_file_path}")
-    #         else:
-    #             print("No downloaded MP4 file found.")
-    #     except Exception as e:
-    #         print(f"Error processing video/audio: {e}")
-    #     return folder_name, audio_file_path
-    # else:
-    #     print("Failed to retrieve video information.")
-    #     return None, None
-
-            # Retrieve the downloaded file name and extract audio
-
+            
         try:
             # folder_name = os.path.join('public', 'package', folder_name)
             downloaded_file_path = os.path.join(folder_name, 'downloaded_video.mp4')
