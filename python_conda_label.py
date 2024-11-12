@@ -33,7 +33,7 @@ client = openai.OpenAI(api_key=api_key)
 
 
 # List of YouTube video URLs
-urls = ['https://www.youtube.com/watch?v=UZmtShh_0A8'] #['https://www.youtube.com/watch?v=IonVNbhEXGE'] # ["https://www.youtube.com/watch?v=Ll99vicSe40"] #['https://www.youtube.com/watch?v=YSajWy460zE'] #['https://www.youtube.com/shorts/0NqJq6ZhhfU'] # ["https://youtube.com/shorts/fgMrDUCPN9A?si=4-7G82x-cA7BKLvV"] #["https://youtu.be/xiyYN2_JKPc?si=rgSwRX4qFeCvsGmi"] #["https://www.youtube.com/shorts/njgruIvF73A"] #["https://youtube.com/shorts/wwdPTSbUHKo?si=YRitosnr77rrseTf"]#["https://youtube.com/shorts/jcNzoONhrmE?si=ZuxuOLep8pW63EFK"] #["https://www.youtube.com/watch?v=1ejfAkzjEhk", "https://www.youtube.com/shorts/3qPldGG8hdE"] #["https://www.youtube.com/shorts/vlbjwg4c8QE", "https://www.youtube.com/shorts/UBDfQMfHvAY"]
+urls = ['https://www.youtube.com/watch?v=ZPoHZj2sGJ0'] #['https://www.youtube.com/watch?v=UZmtShh_0A8'] #['https://www.youtube.com/watch?v=IonVNbhEXGE'] # ["https://www.youtube.com/watch?v=Ll99vicSe40"] #['https://www.youtube.com/watch?v=YSajWy460zE'] #['https://www.youtube.com/shorts/0NqJq6ZhhfU'] # ["https://youtube.com/shorts/fgMrDUCPN9A?si=4-7G82x-cA7BKLvV"] #["https://youtu.be/xiyYN2_JKPc?si=rgSwRX4qFeCvsGmi"] #["https://www.youtube.com/shorts/njgruIvF73A"] #["https://youtube.com/shorts/wwdPTSbUHKo?si=YRitosnr77rrseTf"]#["https://youtube.com/shorts/jcNzoONhrmE?si=ZuxuOLep8pW63EFK"] #["https://www.youtube.com/watch?v=1ejfAkzjEhk", "https://www.youtube.com/shorts/3qPldGG8hdE"] #["https://www.youtube.com/shorts/vlbjwg4c8QE", "https://www.youtube.com/shorts/UBDfQMfHvAY"]
 
 # Set up yt-dlp options
 ydl_opts = {
